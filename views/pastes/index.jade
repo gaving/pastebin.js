@@ -1,0 +1,8 @@
+section#content
+  #pastes
+    - for (var d in pastes)
+      div.paste
+        a.title(id='paste-title-' + pastes[d].id, href='/pastes/' + pastes[d].id)=pastes[d].title
+        pre.body!=pastes[d].body
+        div.date(title=pastes[d].date)
+          a=pastes[d].relative

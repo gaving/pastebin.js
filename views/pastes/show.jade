@@ -1,0 +1,6 @@
+section#content
+  #pastes
+      div.paste
+        a.title(id='paste-title-' + d.id, href='/pastes/' + d.id)=d.title
+        div.body=d.body
+        div.date=d.date
