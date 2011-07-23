@@ -2,7 +2,7 @@ section#content
   #pastes
     - for (var d in pastes)
       div.paste
+        script(type='syntaxhighlighter', class='brush: js')!=pastes[d].body
         a.title(id='paste-title-' + pastes[d].id, href='/pastes/' + pastes[d].id)=pastes[d].title
-        pre.body!=pastes[d].body
         div.date(title=pastes[d].date)
-          a=pastes[d].relative
+          a(href='/pastes/' + pastes[d].id)=pastes[d].relative

@@ -1,11 +1,10 @@
 (function() {
-    var app, express, pub, relDate, _, md;
+    var app, express, pub, relDate, _;
     express = require('express');
     pub = __dirname + '/public';
     Paste = require('./models/paste');
     relDate = require('relative-date');
     _ = require('underscore');
-    md = require('markdown');
     app = express.createServer(express.compiler({
         src: pub,
         enable: ['sass']
@@ -35,7 +34,7 @@
 
     app.get('/pastes/:id', function(req, res, next) {
         Paste.findOne({ _id: req.params.id }, function(err, d) {
-            if (!d) return next(new NotFound('Paste not found'));
+            if (!d) return next(new Error('Paste not found'));
             res.render('pastes/show.jade', {
                 locals: { d: d }
             });
@@ -43,11 +42,11 @@
     });
 
     app.post('/pastes', function(req, res) {
-        req.body.paste.body = md.parse(req.body.paste.body);
         var paste = new Paste(req.body.paste);
         paste.save(function() {
             res.redirect('/pastes')
         });
     });
+
     app.listen(process.env.PORT || 8000);
 })();
