@@ -1,7 +1,12 @@
 div
-  label Title:
-  input(name='paste[title]', value=paste.title || '')
-
+  label language:
+  input(name='paste[lang]', value=paste.lang || '')
 div
-  label Body:
+  label body:
   textarea(name='paste[body]', rows=20, cols=40, value=paste.body || '', type='body')
+div
+  label author:
+  input(name='paste[author]', value=paste.author || '')
+div
+  label title:
+  input(name='paste[title]', value=paste.title || '')

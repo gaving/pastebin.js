@@ -1,10 +1,9 @@
 (function() {
-    var app, express, pub, relDate, _;
+    var app, express, pub;
     express = require('express');
     pub = __dirname + '/public';
     Paste = require('./models/paste');
-    relDate = require('relative-date');
-    _ = require('underscore');
+
     app = express.createServer(express.compiler({
         src: pub,
         enable: ['sass']
@@ -19,7 +18,6 @@
 
     app.get('/pastes', function(req, res) {
         Paste.find().sort('_id', 'descending').limit(5).find(function(err, pastes) {
-            _.map(pastes, (function(paste) { paste.relative = relDate(paste.date); }));
             res.render('pastes/index.jade', {
                 locals: { pastes: pastes }
             });
@@ -46,6 +44,13 @@
         paste.save(function() {
             res.redirect('/pastes')
         });
+    });
+
+    app.post('/pastes/:id/delete', function(req, res) {
+        //var paste = new Paste(req.body.paste);
+        //paste.remove(function() {
+            //res.redirect('/pastes')
+        //});
     });
 
     app.listen(process.env.PORT || 8000);

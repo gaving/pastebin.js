@@ -1,6 +1,16 @@
+#status
+  - if (d.gravatar)
+    span.avatar
+      a(href='/pastes/author' + d.author)
+        img(src=d.gravatar, title='gravatar')
+  - if (d.title)
+    span.back
+      a(href='/' ) pastes
+  - if (d.title)
+    span.title
+      a(href='/pastes/' + d.id)=d.title
+  div.clear
+
 section#content
   #pastes
-      div.paste
-        a.title(id='paste-title-' + d.id, href='/pastes/' + d.id)=d.title
-        script(type='syntaxhighlighter', class='brush: js')!=d.body
-        div.date=d.relative
+    script(type='syntaxhighlighter', class='brush: ' + d.lang)!=d.body

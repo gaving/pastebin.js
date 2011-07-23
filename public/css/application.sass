@@ -1,42 +1,65 @@
+!bg_color = rgba(0, 0, 0, 1)
+!border = 1px solid rgba(50, 50, 50, 0.8)
+!divider = 3px solid rgba(50, 50, 50, 0.8)
+
 body, input, button
   :font medium Helvetica Neue, sans-serif
   :text-rendering optimizelegibility
+
 body
-  :background #ffffff
-  :color #555555
   :padding 0
-  :margin-bottom 20px
 
-input, button
-  :-webkit-border-radius 3px
-  :-moz-border-radius 3px
-  :border !border
-  :padding 3px 6px
+div#status
+  :padding 8px
+  :background-color !bg_color
+  :border-bottom !border
+  :font-size small
+  a
+    :color white
+    :text-decoration none
+  span
+    :padding 5px
+  .back
+    :border-right !divider
+  .title
+    a
+      :color #CDEB8B !important
+  .pastes
+    a
+      :text-align center
+      :margin 0px 0px 0px 45%
+  .new
+    :position absolute
+    :right 5px
+    :top 0px
+  .avatar
+    :position absolute
+    :right 5px
+    :top 0px
+  .clear
+    clear: both
 
-input[type=submit], button
-  :text-shadow 0px 1px 0px rgba(255, 255, 255, 0.5)
-
-a
-  :color #596C86
-  :text-decoration underline
-
-div#container
+body
   section#content
     :position relative
     :margin 0px auto
     :padding-top 11px
-    :overflow scroll
+    :overflow auto
     div#pastes
+      div.toolbar
+        :display none
       :margin 0px auto
       :width 90%
+      :font-size 10pt
       .paste
         :background #f7f7ee
         :margin-bottom 1em
         :padding 7px 15px
         :border-radius 7px
         :border 1px solid #e7e7e7
-        :font-size 10pt
         :-webkit-border-radius 7px
+        div.syntaxhighlighter
+          :height 150px
         a 
           :color #000000
           :font-size 10px
@@ -52,6 +75,3 @@ div#container
             :color #CCC
             :font-size 0.8em
             :text-align right
-
-div.toolbar
-  :display none

@@ -1,8 +1,18 @@
+#status
+  span.pastes
+    a( href: '/' )=pastes.length
+      span pastes
+  span.new
+    a( href: '/pastes/new' )
+      img(src='/img/new.png', title='new paste')
+
 section#content
   #pastes
     - for (var d in pastes)
       div.paste
-        script(type='syntaxhighlighter', class='brush: js')!=pastes[d].body
-        a.title(id='paste-title-' + pastes[d].id, href='/pastes/' + pastes[d].id)=pastes[d].title
+        script(type='syntaxhighlighter', class='brush: ' + pastes[d].lang)!=pastes[d].body
+        a.title(id='paste-title-' + pastes[d].id, href='/pastes/' + pastes[d].id)=pastes[d].lines + " lines"
+          - if (pastes[d].title)
+            span=" (" + pastes[d].title + ")"
         div.date(title=pastes[d].date)
           a(href='/pastes/' + pastes[d].id)=pastes[d].relative
