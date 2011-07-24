@@ -1,7 +1,8 @@
 (function() {
-    var app, express, pub;
-    express = require('express');
-    pub = __dirname + '/public';
+    var app, express, pub, _;
+    express = require('express'),
+    pub = __dirname + '/public',
+    _ = require('underscore'),
     Paste = require('./models/paste');
 
     app = express.createServer(express.compiler({
@@ -20,6 +21,17 @@
         Paste.find().sort('_id', 'descending').limit(5).find(function(err, pastes) {
             res.render('pastes/index.jade', {
                 locals: { pastes: pastes }
+            });
+        });
+    });
+
+    app.get('/stats', function(req, res) {
+        Paste.find().sort('_id', 'descending').find(function(err, pastes) {
+            res.send({
+                pastes: pastes.length,
+                lines: _.reduce(pastes, function(memo, p) {
+                    return memo + p.lines;
+                }, 0)
             });
         });
     });
@@ -46,11 +58,29 @@
         });
     });
 
-    app.post('/pastes/:id/delete', function(req, res) {
-        //var paste = new Paste(req.body.paste);
-        //paste.remove(function() {
-            //res.redirect('/pastes')
-        //});
+    app.del('/pastes/:id', function(req, res) {
+        Paste.findOne({ _id: req.params.id }, function(err, d) {
+            if (!d) return next(new NotFound('Document not found'));
+            d.remove(function() {
+                req.flash('info', 'Past deleted');
+                res.redirect('/pastes');
+            });
+        });
+    });
+
+    app.post('/search', function(req, res) {
+        Paste.find({ user_id: req.currentUser.id, keywords: req.body.s ? req.body.s : null }, [], { sort: ['title', 'descending'] }, function(err, documents) {
+            res.send(documents.map(function(d) {
+                return { title: d.title, id: d._id };
+            }));
+        });
+    });
+
+    app.error(function(err, req, res, next) {
+        res.render('500.jade', {
+            locals: { },
+            status: 500
+        });
     });
 
     app.listen(process.env.PORT || 8000);

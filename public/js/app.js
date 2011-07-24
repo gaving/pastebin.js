@@ -1,4 +1,6 @@
 $(function() {
+    _.templateSettings = { interpolate : /\{\{(.+?)\}\}/g };
+
     SyntaxHighlighter.autoloader(
         'js jscript javascript  /js/sh/scripts/shBrushJScript.js',
         'applescript            /js/sh/scripts/shBrushAppleScript.js',
@@ -14,4 +16,11 @@ $(function() {
     );
 
     SyntaxHighlighter.all();
+
+    $.getJSON('/stats', function(stats) {
+        //console.log(stats);
+        //var statLine = _.template("{{ pastes }} pastes {{ lines }} lines", stats);
+        $('a.stats > span').html(stats.pastes + " pastes, " + stats.lines + " lines");
+        $('section').show();
+    });
 });

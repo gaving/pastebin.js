@@ -1,6 +1,10 @@
+html {
+  height: 100%;}
+
 body, input, button {
   font: medium Helvetica Neue, sans-serif;
-  text-rendering: optimizelegibility;}
+  text-rendering: optimizelegibility;
+  height: 100%;}
 
 body {
   padding: 0;}
@@ -32,10 +36,12 @@ div#status .avatar {
   top: 0px;}
 
 body section#content {
+  display: none;
   position: relative;
   margin: 0px auto;
   padding-top: 11px;
-  overflow: auto;}
+  overflow: auto;
+  height: 90%;}
 body section#content div#pastes {
   margin: 0px auto;
   width: 90%;

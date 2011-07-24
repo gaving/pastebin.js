@@ -2,9 +2,13 @@
 !border = 1px solid rgba(50, 50, 50, 0.8)
 !divider = 3px solid rgba(50, 50, 50, 0.8)
 
+html
+  :height 100%
+
 body, input, button
   :font medium Helvetica Neue, sans-serif
   :text-rendering optimizelegibility
+  :height 100%
 
 body
   :padding 0
@@ -41,10 +45,12 @@ div#status
 
 body
   section#content
+    :display none
     :position relative
     :margin 0px auto
     :padding-top 11px
     :overflow auto
+    :height 90%
     div#pastes
       div.toolbar
         :display none
