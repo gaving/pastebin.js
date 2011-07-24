@@ -1,12 +1,18 @@
 div
   label language:
-  input(name='paste[lang]', value=paste.lang || '')
-div
-  label body:
-  textarea(name='paste[body]', rows=20, cols=40, value=paste.body || '', type='body')
+  //input(name='paste[lang]', value=paste.lang || '')
+  select(name: "paste[lang]")
+    option(value: "plain") Plain
+    option(value: "js") Javascript
+    option(value: "java") Java
+    option(value: "php") PHP
+    option(value: "xml") XML
+    option(value: "sql") SQL
 div
   label author:
   input(name='paste[author]', value=paste.author || '')
 div
   label title:
   input(name='paste[title]', value=paste.title || '')
+div
+  textarea(name='paste[body]', rows=20, cols=40, value=paste.body || '', type='body')

@@ -1,6 +1,15 @@
+#status
+  span.pastes
+    a.stats( href: '/' )
+      span
+  span.new
+    a( href: '/pastes/new' )
+      img(src='/img/new.png', title='new paste')
+
 section#content
   #pastes
-    form.pastes(method='post', action='/pastes')
-      !=partial('fields', { locals: { paste: paste } })
-      div
-        input(type='submit', value='Paste')
+    #new
+      form.pastes(method='post', action='/pastes')
+        !=partial('fields', { locals: { paste: paste } })
+        div
+          input(type='submit', value='Add')

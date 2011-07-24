@@ -10,9 +10,15 @@ section#content
   #pastes
     - for (var d in pastes)
       div.paste
-        script(type='syntaxhighlighter', class='brush: ' + pastes[d].lang)!=pastes[d].body
-        a.title(id='paste-title-' + pastes[d].id, href='/pastes/' + pastes[d].id)=pastes[d].lines + " lines"
-          - if (pastes[d].title)
-            span=" (" + pastes[d].title + ")"
-        div.date(title=pastes[d].date)
-          a(href='/pastes/' + pastes[d].id)=pastes[d].relative
+        script(type='syntaxhighlighter', class='brush: ' + pastes[d].lang)=pastes[d].body
+        div.info
+          - if (pastes[d].gravatar)
+          span.avatar
+            a(href='/pastes/author' + pastes[d].author)
+              img(src=pastes[d].gravatar, title='gravatar')
+          a.title(id='paste-' + pastes[d].id, href='/pastes/' + pastes[d].id)=pastes[d].lines + " lines"
+            - if (pastes[d].title)
+              span=" (" + pastes[d].title + ")"
+          div.date(title=pastes[d].date)
+            a(href='/pastes/' + pastes[d].id)=pastes[d].relative
+          div.clear

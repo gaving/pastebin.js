@@ -66,18 +66,35 @@ body
         :-webkit-border-radius 7px
         div.syntaxhighlighter
           :height 150px
-        a 
-          :color #000000
-          :font-size 10px
-          :float right
-          :overflow auto
-        .title
-          :font-weight bold
-          :text-decoration none
-          :float left
-        .date
-          :padding-bottom 1em
-          a
-            :color #CCC
-            :font-size 0.8em
-            :text-align right
+        div.info
+          :display inline
+          span.avatar
+            :float left
+            :padding-right 6px
+            :padding-bottom 6px
+          a 
+            :color #000000
+            :font-size 10px
+            :overflow auto
+            :float right
+          .title
+            :font-weight bold
+            :text-decoration none
+            :float left
+          .date
+            :padding-bottom 1.2em
+            a
+              :color #CCC
+              :font-size 0.8em
+              :text-align right
+
+div.clear
+  clear: both
+
+#new
+  :padding 10px
+  div
+    :padding 10px
+  textarea
+    :width 100%
+    :height 100%

@@ -3,9 +3,8 @@
     span.avatar
       a(href='/pastes/author' + d.author)
         img(src=d.gravatar, title='gravatar')
-  - if (d.title)
-    span.back
-      a(href='/' ) pastes
+  span.back
+    a(href='/' ) pastes
   - if (d.title)
     span.title
       a(href='/pastes/' + d.id)=d.title
@@ -13,4 +12,4 @@
 
 section#content
   #pastes
-    script(type='syntaxhighlighter', class='brush: ' + d.lang)!=d.body
+    script(type='syntaxhighlighter', class='brush: ' + d.lang)=d.body

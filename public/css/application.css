@@ -57,18 +57,33 @@ body section#content div#pastes .paste {
   -webkit-border-radius: 7px;}
 body section#content div#pastes .paste div.syntaxhighlighter {
   height: 150px;}
-body section#content div#pastes .paste a  {
+body section#content div#pastes .paste div.info {
+  display: inline;}
+body section#content div#pastes .paste div.info span.avatar {
+  float: left;
+  padding-right: 6px;
+  padding-bottom: 6px;}
+body section#content div#pastes .paste div.info a  {
   color: #000000;
   font-size: 10px;
-  float: right;
-  overflow: auto;}
-body section#content div#pastes .paste .title {
+  overflow: auto;
+  float: right;}
+body section#content div#pastes .paste div.info .title {
   font-weight: bold;
   text-decoration: none;
   float: left;}
-body section#content div#pastes .paste .date {
-  padding-bottom: 1em;}
-body section#content div#pastes .paste .date a {
+body section#content div#pastes .paste div.info .date {
+  padding-bottom: 1.2em;}
+body section#content div#pastes .paste div.info .date a {
   color: #CCC;
   font-size: 0.8em;
   text-align: right;}
+
+
+#new {
+  padding: 10px;}
+#new div {
+  padding: 10px;}
+#new textarea {
+  width: 100%;
+  height: 100%;}

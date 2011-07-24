@@ -19,7 +19,7 @@
 
     app.get('/pastes', function(req, res) {
         Paste.find().sort('_id', 'descending').limit(5).find(function(err, pastes) {
-            res.render('pastes/index.jade', {
+            res.render('pastes/index', {
                 locals: { pastes: pastes }
             });
         });
@@ -45,7 +45,7 @@
     app.get('/pastes/:id', function(req, res, next) {
         Paste.findOne({ _id: req.params.id }, function(err, d) {
             if (!d) return next(new Error('Paste not found'));
-            res.render('pastes/show.jade', {
+            res.render('pastes/show', {
                 locals: { d: d }
             });
         });
@@ -62,7 +62,7 @@
         Paste.findOne({ _id: req.params.id }, function(err, d) {
             if (!d) return next(new NotFound('Document not found'));
             d.remove(function() {
-                req.flash('info', 'Past deleted');
+                req.flash('info', 'Paste deleted');
                 res.redirect('/pastes');
             });
         });
@@ -77,7 +77,7 @@
     });
 
     app.error(function(err, req, res, next) {
-        res.render('500.jade', {
+        res.render('500', {
             locals: { },
             status: 500
         });

@@ -5,7 +5,7 @@ var mongoose = require('mongoose'),
     crypto = require("crypto");
 
 var Paste = new Schema({
-    author  : String
+    author  : { type: String, default: 'example@example.com' }
     , title : String
     , body  : String
     , lang  : { type: String, default: 'plain' }
@@ -25,11 +25,8 @@ Paste.virtual('lines').get(function () {
 
 Paste.virtual('gravatar').get(function () {
     var author = this.get('author');
-    if (author) {
-        var hash = crypto.createHash("md5").update(author).digest("hex");
-        return "http://www.gravatar.com/avatar/" + hash + "?s=25";
-    }
-    return null;
+    var hash = crypto.createHash("md5").update(author).digest("hex");
+    return "http://www.gravatar.com/avatar/" + hash + "?s=20";
 })
 
 module.exports = db.model('Paste');
