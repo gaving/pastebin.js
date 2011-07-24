@@ -1,6 +1,6 @@
 # pastebin.js
 
-- pastebin implementation in node
+- pastebin implementation in node.js
 
 ## screens
 
