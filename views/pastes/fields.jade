@@ -1,38 +1,40 @@
-div
-  label language:
-  select(name="paste[lang]")
-    optgroup(label="text")
-    option(value="plain") Plain
-    option(value="diff") Diff
-    optgroup(label="more")
-    option(value="applescript") AppleScript
-    option(value="as3") AS3
-    option(value="bash") Bash
-    option(value="coldfusion") ColdFusion
-    option(value="cpp") Cpp
-    option(value="csharp") CSharp
-    option(value="css") CSS
-    option(value="delphi") Delphi
-    option(value="erlang") Erlang
-    option(value="groovy") Groovy
-    option(value="java") Java
-    option(value="javafx") JavaFX
-    option(value="jscript") JScript
-    option(value="perl") Perl
-    option(value="php") PHP
-    option(value="plain") Plain
-    option(value="python") Python
-    option(value="ruby") Ruby
-    option(value="sass") Sass
-    option(value="scala") Scala
-    option(value="sql") SQL
-    option(value="vb") VB
-    option(value="xml") XML
-div
-  label author:
-  input(name='paste[author]', value=paste.author || '')
-div
-  label title:
-  input(name='paste[title]', value=paste.title || '')
-div
-  textarea(name='paste[body]', rows=20, cols=40, value=paste.body || '', type='body')
+fieldset
+  p
+    textarea(name='paste[body]', rows=80, cols=40, value=paste.body || '', type='body')
+fieldset
+  p
+    label language:
+    select(name="paste[lang]")
+      optgroup(label="text")
+      option(value="plain") Plain
+      option(value="diff") Diff
+      optgroup(label="more")
+      option(value="applescript") AppleScript
+      option(value="as3") AS3
+      option(value="bash") Bash
+      option(value="coldfusion") ColdFusion
+      option(value="cpp") Cpp
+      option(value="csharp") CSharp
+      option(value="css") CSS
+      option(value="delphi") Delphi
+      option(value="erlang") Erlang
+      option(value="groovy") Groovy
+      option(value="java") Java
+      option(value="javafx") JavaFX
+      option(value="jscript") JScript
+      option(value="perl") Perl
+      option(value="php") PHP
+      option(value="plain") Plain
+      option(value="python") Python
+      option(value="ruby") Ruby
+      option(value="sass") Sass
+      option(value="scala") Scala
+      option(value="sql") SQL
+      option(value="vb") VB
+      option(value="xml") XML
+  p
+    label author:
+    input(name='paste[author]', value=paste.author || '')
+  p
+    label title:
+    input(name='paste[title]', value=paste.title || '')

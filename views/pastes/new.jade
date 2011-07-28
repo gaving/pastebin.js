@@ -1,3 +1,5 @@
+link(rel='stylesheet', type='text/css', href='/css/form.css')
+
 #status
   span.pastes
     a.stats( href='/' )
@@ -9,7 +11,7 @@
 section#content
   #pastes
     #new
-      form.pastes(method='post', action='/pastes')
+      form#form1.pastes(method='post', action='/pastes')
         !=partial('fields', { locals: { paste: paste } })
-        div
-          input(type='submit', value='Add')
+        p.submit
+          button(type='submit') Add
