@@ -1,7 +1,4 @@
-fieldset
-  p
-    textarea(name='paste[body]', rows=80, cols=40, value=paste.body || '', type='body')
-fieldset
+div.options
   p
     label language:
     select(name="paste[lang]")
@@ -33,8 +30,24 @@ fieldset
       option(value="vb") VB
       option(value="xml") XML
   p
+    label title:
+    input(name='paste[title]', value=paste.title || '')
+  p
     label author:
     input(name='paste[author]', value=paste.author || '')
   p
-    label title:
-    input(name='paste[title]', value=paste.title || '')
+    label theme:
+    select(name="paste[theme]")
+      option(value="Default") Default
+      optgroup(label="more")
+      option(value="Django") Django
+      option(value="Eclipse") Eclipse
+      option(value="Emacs") Emacs
+      option(value="FadeToGrey") Fade To Grey
+      option(value="Midnight") Midnight
+      option(value="RDark") RDark
+  p
+    label private?
+    input(title='only available via url', name='paste[private]', type='checkbox', checked=paste.private)
+fieldset
+  textarea(name='paste[body]', rows=80, cols=40, value=paste.body || '', type='body')
