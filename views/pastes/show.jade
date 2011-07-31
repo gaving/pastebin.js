@@ -6,11 +6,11 @@ script(src='/js/show.js', type='text/javascript')
   span.back
     a(href='/' ) pastes
   div.pasteInfo
-    span.title
-      a(href='/pastes/' + d.id)=d.title || 'Untitled'
     - if (d.gravatar)
       span.avatar
         img(src=d.gravatar, title='gravatar')
+    span.title
+      a(href='/pastes/' + d.id)=d.title || 'Untitled'
   div.clear
 
 section#content

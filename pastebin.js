@@ -7,6 +7,10 @@
     , Util = require('./models/util');
 
     app.configure(function() {
+        app.use(express.compiler({
+            src: __dirname + '/public',
+            enable: ['sass']
+        }));
         app.use(express.logger());
         app.use(express.methodOverride());
         app.use(express.static(__dirname + '/public'));

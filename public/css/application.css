@@ -23,7 +23,6 @@ div#status .back {
   border-right: 3px solid rgba(50, 50, 50, 0.8);}
 div#status div.pasteInfo {
   display: inline;
-  margin: 0px 0px 0px 37%;
   padding: 1px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;}
@@ -43,11 +42,12 @@ div#status div.avatars {
 body section#content {
   position: relative;
   margin: 0px auto;
-  overflow: auto;}
+  overflow: auto;
+  height: 95%;}
 body section#content div#pastes {
   margin: 0px auto;
   width: 90%;
-  height: 90%;
+  height: 50%;
   font-size: 10pt;}
 body section#content div#pastes div.toolbar {
   display: none;}

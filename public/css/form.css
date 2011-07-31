@@ -35,10 +35,12 @@
 #form1 p.submit{
     background:url(../img/form/form_bottom.gif) no-repeat 0 100%;
     margin:0;
+    text-align:right;
 }
 #form1 button{
     border:none;
-    background:url(../img/form/form_button.gif) no-repeat 0 0;
     cursor:pointer;
-    text-align:center;
+
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
 }
