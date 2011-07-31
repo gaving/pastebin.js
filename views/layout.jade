@@ -2,21 +2,21 @@
 html
   head
     title pastebin.js
-    link(href='http://fonts.googleapis.com/css?family=IM+Fell+Great+Primer:regular,italic', rel='stylesheet', type='text/css')
     link(rel='stylesheet', type='text/css', href='/css/reset.css')
     link(rel='stylesheet', type='text/css', href='/css/ribbon.css')
     link(rel='stylesheet', type='text/css', href='/css/application.css')
     link(rel='stylesheet', type='text/css', href='/css/sh/shCore.css')
     link(rel='stylesheet', type='text/css', href='/css/sh/shThemeDefault.css')
 
-    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js', type='text/javascript')
-    script(src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js', type='text/javascript')
-    script(src='http://cdn.socket.io/stable/socket.io.js', type='text/javascript')
-    script(src='/js/underscore.min.js', type='text/javascript')
-    script(src='/js/sh/shCore.js', type='text/javascript')
-    script(src='/js/sh/shAutoloader.js', type='text/javascript')
-    script(src='/js/app.js', type='text/javascript')
+    script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js')
+    script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js')
 
-    body!= body
+    script(type='text/javascript', src="/socket.io/socket.io.js")
+    script(type='text/javascript', src='/js/underscore.min.js')
+    script(type='text/javascript', src='/js/sh/shCore.js')
+    script(type='text/javascript', src='/js/sh/shAutoloader.js')
+    script(type='text/javascript', src='/js/app.js')
 
-    footer
+  body!= body
+
+  footer

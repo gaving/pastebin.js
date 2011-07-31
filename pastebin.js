@@ -84,4 +84,12 @@
     });
 
     app.listen(process.env.PORT || 8000);
+
+    var io = require('socket.io').listen(app);
+    io.sockets.on('connection', function(socket) {
+        socket.emit('message', {hi: "hello"});
+        socket.on('message', function(message) {
+            return socket.broadcast.send(message);
+        });
+    });
 })();

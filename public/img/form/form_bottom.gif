@@ -1,0 +1,169 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Page not found</title>
+<meta name="description" content=""></meta>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/cssglobe" />
+<link href="/v4.0/css/screen.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/v4.0/css/print.css" rel="stylesheet" type="text/css" media="print" />
+
+<script type="text/javascript" src="/v4.0/js/jquery.js"></script>
+<script type="text/javascript" src="/v4.0/js/main.js"></script>
+<script src="/mint/mint_v129/?js" type="text/javascript"></script>
+<link rel="shortcut icon" href="/favicon.ico" />
+</head>
+
+<body>
+
+<div id="header"><div class="inner">	
+
+	<h1><a href="/" title="click here to return home">Css Globe</a></h1> 		
+	
+	<ul id="nav">
+		<li><a href="/" title="click here to return home">Home</a></li>	
+		<li><a href="/articles.asp" title="browse article archive">Articles</a></li>
+		<li><a href="/news.asp" title="archive of member contributed news">Community news</a></li>			
+		<li><a href="/about.asp" title="find out more about Css Globe">About</a></li>	
+		<li><a href="http://templatica.com/templates" title="Handcoded web standards templates">Css Templates</a></li>	
+		<li><a href="http://easyframework.com/" title="CSS HTML JavaScript Framework">Front-end Framework</a></li>	
+		<li><a href="/contact.asp" title="get in touch with Css Globe">Contact</a></li>	
+		<li><a href="/feeds.asp" title="subscribe to one of our feeds" class="feed">RSS Feeds</a></li>	
+	</ul>	
+
+</div></div>
+
+
+<div id="container"> 
+
+		<h2 id="intro">Page not found</h2>
+		
+		<div id="content">
+			
+			<div id="main"> 
+											
+				<p>The page you requested can't be found.</p>		
+			
+			</div> 
+		
+					<div id="side">
+		
+			<div class="sitenote">CSS Globe is looking for writers!<br />
+			<strong>Please <a href="/contact">contact me here!</a></strong></div>
+			
+			
+	<div id="cpanel" class="fixed">
+		
+		<p>Hey, you are not logged in!<br />
+		<a href="/register">Apply for a membership</a>
+		or 
+		<a href="/login">login here</a>.</p>	
+	
+	</div>	
+
+			<p id="subscribe"><a href="http://feeds.feedburner.com/cssglobe/" title="Subscribe to RSS feed">Subscribe to CSSG Feed</a></p>
+						
+			<div class="ads fixed">
+
+<script type="text/javascript">
+Vertical1239598 = false;
+ShowAdHereBanner1239598 = false;
+RepeatAll1239598 = false;
+NoFollowAll1239598 = false;
+BannerStyles1239598 = new Array(
+    "a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0 4px 10px 0;text-align:center;text-decoration:none;overflow:hidden;}",
+    "img{border:0;clear:right;}",
+    "a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;}",
+    "a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;}"
+);
+document.write(unescape("%3Cscript src='"+document.location.protocol+"//s3.buysellads.com/1239598/1239598.js?v="+Date.parse(new Date())+"' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript">
+Vertical1239599 = false;
+ShowAdHereBanner1239599 = true;
+RepeatAll1239599 = false;
+NoFollowAll1239599 = false;
+BannerStyles1239599 = new Array(
+	"a{display:inline;float:left;font-size:11px;color:#888;font-family:arial,sans-serif;margin:0 4px 10px 0;text-align:center;text-decoration:none;overflow:hidden;}",
+	"img{border:0;clear:right;}",
+	"a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;}",
+	"a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;}"
+);
+document.write(unescape("%3Cscript src='"+document.location.protocol+"//s3.buysellads.com/1239599/1239599.js?v="+Date.parse(new Date())+"' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</div>						
+
+
+			<div id="twitter"></div>	
+
+						
+									
+			<div class="box">
+				<h3>Want to join?</h3>
+				<p>If you wish to contribute with your own articles, updates or gallery entries you can
+				apply for a membership and even become our editor.</p>
+				<p class="more"><a href="register.asp" title="apply for a membership at Css Globe">Apply here</a></p>						
+			</div>
+			
+			
+			
+		<p id="facebook"><a href="http://www.facebook.com/alen.grakalic" title="Become my Facebook friend">Become a friend</a></p>
+		
+		</div>
+		
+		
+
+		</div> 
+
+			<div id="footer" class="fixed">
+		
+			<p>
+				Css Globe is a community news site where members can publish news about web standards, css, web design and web development.	<br />			
+				CSSG is brought to you by Alen Grakalic, web standards designer and developer
+				available for <a href="http://cssglobe.com/contact">contract work</a><br />
+				&copy; Copyright <a href="http://cssglobe.com" title="Web Standards Magazine and Community">cssglobe.com</a> 2009. - All Rights Reserved
+			</p>
+		
+			<ul>			
+				<li><a href="/">Home</a></li>
+				<li><a href="/news.asp">Css News</a></li>
+				<li><a href="/about.asp">About</a></li>
+				<li><a href="/register.asp">Register</a></li>
+				<li><a href="/contact.asp">Contact</a></li>
+				<li><a href="http://feeds.feedburner.com/cssglobe">RSS Feed</a></li>
+			</ul>	
+
+			<ul>			
+				<li><a href="http://templatica.com/templates">Css Templates</a></li>
+				<li><a href="http://templatica.com/">Web Template Shop</a></li>
+				<li><a href="http://templatica.com/unique" title="unique templates">Unique Templates</a></li>
+			</ul>	
+						
+			<ul>
+				<li><a href="http://vandelaydesign.com/blog">Vandelay Design</a></li>
+				<li><a href="http://www.noupe.com/">Noupe</a></li>
+				<li><a href="http://css-tricks.com/">Css-tricks</a></li>
+				<li><a href="http://www.bittbox.com">Bittbox</a></li>
+				<li><a href="http://sixrevisions.com/">Six Revisions</a></li>
+				<li><a href="http://webdesignerdepot.com/">Web Designer Depot</a></li>
+				<li><a href="http://line25.com">Line 25</a></li>	
+				<li><a href="http://woork.blogspot.com/">Woork</a></li>				
+			</ul>						
+		
+		
+		</div>	
+		
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-783567-1";
+urchinTracker();
+</script>	
+
+</div>			
+		  
+</body>
+</html>
