@@ -3,11 +3,11 @@ html {
 
 body, input, button {
   font: medium Helvetica Neue, sans-serif;
-  text-rendering: optimizelegibility;
-  height: 100%;}
+  text-rendering: optimizelegibility;}
 
 body {
-  padding: 0;}
+  padding: 0;
+  height: 100%;}
 
 div#status {
   padding: 8px;
@@ -21,7 +21,13 @@ div#status span {
   padding: 5px;}
 div#status .back {
   border-right: 3px solid rgba(50, 50, 50, 0.8);}
-div#status .title a {
+div#status div.pasteInfo {
+  display: inline;
+  margin: 0px 0px 0px 37%;
+  padding: 1px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;}
+div#status div.pasteInfo .title a {
   color: #CDEB8B !important;}
 div#status .pastes a {
   text-align: center;
@@ -30,19 +36,18 @@ div#status .new {
   position: absolute;
   right: 5px;
   top: 0px;}
-div#status .avatar {
-  position: absolute;
-  right: 5px;
+div#status div.avatars {
+  float: right;
   top: 0px;}
 
 body section#content {
-  display: none;
   position: relative;
   margin: 0px auto;
   overflow: auto;}
 body section#content div#pastes {
   margin: 0px auto;
   width: 90%;
+  height: 90%;
   font-size: 10pt;}
 body section#content div#pastes div.toolbar {
   display: none;}

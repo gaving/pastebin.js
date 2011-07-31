@@ -1,24 +1,39 @@
 (function() {
-    var app, express, pub, _;
-    express = require('express'),
-    pub = __dirname + '/public',
-    _ = require('underscore'),
-    Paste = require('./models/paste');
 
-    app = express.createServer(express.compiler({
-        src: pub,
-        enable: ['sass']
-    }), express.static(pub), express.bodyParser(), express.logger(), express.errorHandler({
-        dumpExceptions: true,
-        showStack: true
-    })).set('view engine', 'jade');
+    var express = require('express')
+    , app = express.createServer()
+    , _ = require('underscore')
+    , Paste = require('./models/paste')
+    , Util = require('./models/util');
+
+    app.configure(function() {
+        app.use(express.logger());
+        app.use(express.methodOverride());
+        app.use(express.static(__dirname + '/public'));
+        app.use(express.bodyParser());
+        app.use(express.cookieParser());
+    });
+
+    app.configure('development', function() {
+        app.use(express.errorHandler({
+            dumpExceptions: true,
+            showStack: true
+        }));
+    });
+
+    app.configure('production', function() {
+        app.use(express.errorHandler());
+    });
+
+    app.set('views', __dirname + '/views');
+    app.set('view engine', 'jade');
 
     app.get('/', function(req, res) {
         res.redirect('/pastes')
     });
 
     app.get('/pastes', function(req, res) {
-        Paste.find().sort('_id', 'descending').limit(5).find(function(err, pastes) {
+        Paste.find({ private: false }).sort('_id', 'descending').limit(5).find(function(err, pastes) {
             res.render('pastes/index', {
                 locals: { pastes: pastes }
             });
@@ -53,9 +68,17 @@
 
     app.post('/pastes', function(req, res) {
         var paste = new Paste(req.body.paste);
-        paste.save(function() {
-            res.redirect('/pastes')
+        paste.save(function(e) {
+            res.redirect('/pastes/' + paste._id)
         });
+    });
+
+    app.post('/lines', function(req, res) {
+        console.log(req.body);
+        //var paste = new Paste(req.body.paste);
+        //paste.save(function() {
+            //res.redirect('/pastes')
+        //});
     });
 
     app.del('/pastes/:id', function(req, res) {
@@ -85,11 +108,30 @@
 
     app.listen(process.env.PORT || 8000);
 
-    var io = require('socket.io').listen(app);
+    var io = require('socket.io').listen(app)
+        , connections = {};
+
+    io.configure('production', function() {
+        io.enable('browser client etag');
+        io.set('log level', 1);
+    });
+
     io.sockets.on('connection', function(socket) {
-        socket.emit('message', {hi: "hello"});
-        socket.on('message', function(message) {
-            return socket.broadcast.send(message);
+        connections[socket.id] = {
+            'id' : socket.id,
+            'hash' : Util.ipHash(socket.id)
+        };
+
+        socket.emit('connections', connections);
+        socket.broadcast.emit('join', connections[socket.id]);
+
+        socket.on('disconnect', function () {
+            if (!socket.id) return;
+            delete connections[socket.id];
+            console.log(socket.id + " disconnected");
+            socket.broadcast.emit('disconnect', {
+                'id' : socket.id
+            });
         });
     });
 })();

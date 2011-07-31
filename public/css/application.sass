@@ -8,10 +8,10 @@ html
 body, input, button
   :font medium Helvetica Neue, sans-serif
   :text-rendering optimizelegibility
-  :height 100%
 
 body
   :padding 0
+  :height 100%
 
 div#status
   :padding 8px
@@ -25,9 +25,15 @@ div#status
     :padding 5px
   .back
     :border-right !divider
-  .title
-    a
-      :color #CDEB8B !important
+  div.pasteInfo
+    :display inline
+    :margin 0px 0px 0px 37%
+    :padding 1px
+    :-webkit-border-radius 3px
+    :-moz-border-radius 3px
+    .title
+      a
+        :color #CDEB8B !important
   .pastes
     a
       :text-align center
@@ -36,16 +42,14 @@ div#status
     :position absolute
     :right 5px
     :top 0px
-  .avatar
-    :position absolute
-    :right 5px
+  div.avatars
+    :float right
     :top 0px
   .clear
     clear: both
 
 body
   section#content
-    :display none
     :position relative
     :margin 0px auto
     :overflow auto
@@ -54,6 +58,7 @@ body
         :display none
       :margin 0px auto
       :width 90%
+      :height 90%
       :font-size 10pt
       .paste
         :background #f7f7ee
@@ -95,7 +100,6 @@ div.line
   :-khtml-user-select none
   :-webkit-user-select none
   :user-select none
-
 
 div.highlighting
   :background-color cornsilk !important

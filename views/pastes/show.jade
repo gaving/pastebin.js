@@ -1,14 +1,16 @@
-script(src='/js/paste.js', type='text/javascript')
+link(rel='stylesheet', type='text/css', href='/css/sh/shTheme' + d.theme + '.css')
+script(src='/js/show.js', type='text/javascript')
 
 #status
-  - if (d.gravatar)
-    span.avatar
-      img(src=d.gravatar, title='gravatar')
+  div.avatars
   span.back
     a(href='/' ) pastes
-  - if (d.title)
+  div.pasteInfo
     span.title
-      a(href='/pastes/' + d.id)=d.title
+      a(href='/pastes/' + d.id)=d.title || 'Untitled'
+    - if (d.gravatar)
+      span.avatar
+        img(src=d.gravatar, title='gravatar')
   div.clear
 
 section#content
