@@ -8,3 +8,4 @@
 - validation
 - diff support, versions
 - hack syntaxhighliter to provide edit stuff
+- secure pastes, lock icon

@@ -61,8 +61,8 @@
         });
     });
 
-    app.get('/pastes/:id', function(req, res, next) {
-        Paste.findOne({ _id: req.params.id }, function(err, d) {
+    app.get('/pastes/:hash', function(req, res, next) {
+        Paste.findOne({ hash: req.params.hash }, function(err, d) {
             if (!d) return next(new Error('Paste not found'));
             res.render('pastes/show', {
                 locals: { d: d }
@@ -73,7 +73,7 @@
     app.post('/pastes', function(req, res) {
         var paste = new Paste(req.body.paste);
         paste.save(function(e) {
-            res.redirect('/pastes/' + paste._id)
+            res.redirect('/pastes/' + paste.hash)
         });
     });
 
@@ -101,6 +101,10 @@
                 return { title: d.title, id: d._id };
             }));
         });
+    });
+
+    app.get('/:hash', function(req, res) {
+        res.redirect('/pastes/' + req.params.hash)
     });
 
     app.error(function(err, req, res, next) {

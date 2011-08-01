@@ -17,6 +17,7 @@ var Paste = new Schema({
             return crypto.createHash("md5").update(email).digest("hex");
         }
     }
+    , hash : String
     , title : String
     , body  : String
     , lang  : { type: String, default: 'plain' }
@@ -44,6 +45,7 @@ Paste.virtual('gravatar').get(function () {
 module.exports = db.model('Paste');
 
 Paste.pre('save', function (next) {
+    this.hash = crypto.createHash("md5").update(this.id).digest("hex").substring(0, 5).toUpperCase();
     console.log(this.get('_id') + ' saved');
     next();
 });

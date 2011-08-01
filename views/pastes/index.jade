@@ -22,9 +22,9 @@ section#content
           - if (pastes[d].gravatar)
           span.avatar
             img(src=pastes[d].gravatar)
-          a.title(id='paste-' + pastes[d].id, href='/pastes/' + pastes[d].id)=pastes[d].lines + " lines"
+          a.title(id='paste-' + pastes[d].hash, href='/pastes/' + pastes[d].hash)=pastes[d].lines + " lines"
             - if (pastes[d].title)
               span=" (" + pastes[d].title + ")"
           div.date(title=pastes[d].date)
-            a(href='/pastes/' + pastes[d].id)=pastes[d].relative
+            a(href='/pastes/' + pastes[d].hash)=pastes[d].relative
           div.clear

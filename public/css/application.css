@@ -89,6 +89,8 @@ div.line {
   -khtml-user-select: none;
   -webkit-user-select: none;
   user-select: none;}
+div.line:hover {
+  background-color: cornsilk !important;}
 
 div.highlighting {
   background-color: cornsilk !important;}
