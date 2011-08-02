@@ -7,7 +7,8 @@ body, input, button {
 
 body {
   padding: 0;
-  height: 100%;}
+  height: 100%;
+  overflow: hidden;}
 
 div#status {
   padding: 8px;
@@ -37,7 +38,10 @@ div#status .new {
   top: 0px;}
 div#status div.avatars {
   float: right;
-  top: 0px;}
+  top: 0px;
+  margin-top: -2px;}
+div#status div.avatars span.me {
+  border-left: 3px solid rgba(50, 50, 50, 0.8);}
 
 body section#content {
   position: relative;
@@ -89,6 +93,10 @@ div.line {
   -khtml-user-select: none;
   -webkit-user-select: none;
   user-select: none;}
+div.line img {
+  padding: 1px;
+  float: left;
+  margin-right: 5px;}
 div.line:hover {
   background-color: cornsilk !important;}
 

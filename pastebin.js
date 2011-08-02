@@ -125,12 +125,11 @@
     });
 
     io.sockets.on('connection', function(socket) {
-        connections[socket.id] = {
-            'id' : socket.id,
-            'hash' : Util.ipHash(socket.id)
-        };
-
+        var client = { 'id' : socket.id, 'hash' : Util.ipHash(socket.id) };
+        socket.emit('me', client);
         socket.emit('connections', connections);
+
+        connections[socket.id] = client;
         socket.broadcast.emit('join', connections[socket.id]);
 
         socket.on('disconnect', function () {

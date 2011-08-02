@@ -12,6 +12,7 @@ body, input, button
 body
   :padding 0
   :height 100%
+  :overflow hidden
 
 div#status
   :padding 8px
@@ -44,6 +45,9 @@ div#status
   div.avatars
     :float right
     :top 0px
+    :margin-top -2px
+    span.me
+      :border-left !divider
   .clear
     clear: both
 
@@ -100,6 +104,10 @@ div.line
   :-khtml-user-select none
   :-webkit-user-select none
   :user-select none
+  img
+    :padding 1px
+    :float left
+    :margin-right 5px
   &:hover
     :background-color cornsilk !important
 
