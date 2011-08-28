@@ -9,13 +9,13 @@ $(function() {
             filter: 'div.line',
             selecting: function(event, ui) {
                 $.allLines(ui.selecting).removeClass('highlighted').addClass('highlighting');
-                //Lines.transmit();
             },
             unselecting: function(event, ui) {
                 $.allLines(ui.unselecting).removeClass('highlighting');
             },
             selected: function(event, ui) {
                 $.allLines(ui.selected).toggleClass('highlighted').toggleMark(true);
+                //Lines.transmit();
             },
             unselected: function(event, ui) {
                 $.allLines(ui.unselected).removeClass('highlighted').toggleMark(false);

@@ -6,8 +6,11 @@ var mongoose = require('mongoose'),
 
 var Line = new Schema({
     number     : Number
-    , date      : Date
+    , date     : Date
+    , author   : String
 });
+
+mongoose.model('Line', Line);
 
 var Paste = new Schema({
     author  : {
@@ -42,7 +45,7 @@ Paste.virtual('gravatar').get(function () {
     return "http://www.gravatar.com/avatar/" + this.get('author') + "?s=15";
 })
 
-module.exports = db.model('Paste');
+module.exports = {paste:db.model('Paste'), line:db.model('Line')};
 
 Paste.pre('save', function (next) {
     this.hash = crypto.createHash("md5").update(this.id).digest("hex").substring(0, 5).toUpperCase();

@@ -3,7 +3,8 @@
     var express = require('express')
     , app = express.createServer()
     , _ = require('underscore')
-    , Paste = require('./models/paste')
+    , Paste = require('./models/paste').paste
+    , Line = require('./models/paste').line
     , Util = require('./models/util');
 
     app.configure(function() {
@@ -77,12 +78,17 @@
         });
     });
 
-    app.post('/lines', function(req, res) {
-        console.log(req.body);
-        //var paste = new Paste(req.body.paste);
-        //paste.save(function() {
-            //res.redirect('/pastes')
-        //});
+    app.get('/lines/:hash/:lines', function(req, res, next) {
+        console.log(req.params);
+        Paste.findOne({ hash: req.params.hash }, function(err, d) {
+            if (!d) return next(new Error('Paste not found'));
+            d.marks.push(new Line({
+                number: 10,
+                date: new Date(),
+                author: "me"
+            }));
+            d.save();
+        });
     });
 
     app.del('/pastes/:id', function(req, res) {
